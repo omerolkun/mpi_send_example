@@ -72,7 +72,7 @@ int main(int argc, char* argv[]){
         for(int i = 0; i < 4 ; i++){
             avg = avg + partialArr[i]; 
         }
-        avg = avg /4;
+        avg = avg /16;
         MPI_Send(&avg,1,MPI_DOUBLE,0,15,MPI_COMM_WORLD);
         MPI_Recv(&from_zero,1,MPI_DOUBLE,0,15,MPI_COMM_WORLD,MPI_STATUS_IGNORE);
         MPI_Recv(&from_third,1,MPI_DOUBLE,3,13,MPI_COMM_WORLD,MPI_STATUS_IGNORE);
@@ -83,7 +83,7 @@ int main(int argc, char* argv[]){
         printf("> i am rank %d and from third i gave %f \n",rank,from_third);
         printf("> i am rank %d and from first i gave %f \n",rank,from_first);
         printf("> i am rank %d and from second i gave %f \n",rank, from_second);
-        double avg_matrix = (from_first + from_second + from_third + from_zero)/4;
+        double avg_matrix = (from_first + from_second + from_third + from_zero)/16;
         printf("---\nThe average of the matrix is %f \n---\n",avg_matrix);
         printf("P%d = ",rank);
         for (int i = 0 ; i < 4; i++){
@@ -98,7 +98,7 @@ int main(int argc, char* argv[]){
         for (int i = 0 ; i < 4 ; i++){
             avg = avg + partialArr[i];
         }
-        avg = avg/4;
+        avg = avg/16;
         MPI_Send(&avg,1,MPI_DOUBLE,0,13,MPI_COMM_WORLD);
         printf("P%d = ",rank);
         for (int i = 0 ; i < 4; i++){
@@ -114,7 +114,7 @@ int main(int argc, char* argv[]){
         for (int i = 0 ; i < 4 ; i++){
             avg = avg + parr[i];
         }
-        avg = avg /4 ;
+        avg = avg /16 ;
         MPI_Send(&avg, 1, MPI_DOUBLE, 0, 14,MPI_COMM_WORLD);
         printf("P%d = ",rank);
         for (int i = 0; i < 4; i++){
@@ -130,7 +130,7 @@ int main(int argc, char* argv[]){
         for(int i = 0; i< 4 ;i++){
             avg = avg + parr[i];
         }
-        avg = avg/4;
+        avg = avg/16;
         printf("P%d =",rank);
         for (int i =0 ; i < 4 ; i++){
             printf("%d ", parr[i]);
