@@ -83,7 +83,7 @@ int main(int argc, char* argv[]){
         printf("> i am rank %d and from third i gave %f \n",rank,from_third);
         printf("> i am rank %d and from first i gave %f \n",rank,from_first);
         printf("> i am rank %d and from second i gave %f \n",rank, from_second);
-        double avg_matrix = (from_first + from_second + from_third + from_zero)/16;
+        double avg_matrix = (from_first + from_second + from_third + from_zero);
         printf("---\nThe average of the matrix is %f \n---\n",avg_matrix);
         printf("P%d = ",rank);
         for (int i = 0 ; i < 4; i++){
